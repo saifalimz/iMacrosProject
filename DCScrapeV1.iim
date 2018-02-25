@@ -1,0 +1,21 @@
+﻿'EMAIL EXTRACTION SCRIPT - SAIF ALI
+
+VERSION BUILD=9030808 RECORDER=FX
+SET !ERRORIGNORE YES
+SET !ERRORCONTINUNE YES
+SET !EXTRACT_TEST_POPUP NO
+TAB T=1
+URL GOTO=http://www.distributorcentral.com/supplier/maintenance.cfm
+TAG POS=1 TYPE=SELECT FORM=ID:custSearch ATTR=NAME:as_field CONTENT=%st
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:custSearch ATTR=ID:as_keyword CONTENT=New<SP>York
+TAG POS=1 TYPE=BUTTON FORM=ID:custSearch ATTR=TYPE:submit&&CLASS:fv-hidden-submit&&TXT:
+WAIT SECONDS=3
+TAG POS=1 TYPE=SELECT FORM=ACTION:/supplier/maintenance.cfm?as_sort_by=a.companyname&as_field=st&as_keyword=New%20York&asd=15&as_distact=&as_supact=&haswebsites=&as_acctstatuscode=&as_acct_rep=&epath=&as_starts_with= ATTR=NAME:as_display CONTENT=%150
+WAIT SECONDS=2
+TAG POS=1 TYPE=I ATTR=CLASS:fa<SP>fa-info-circle&&TITLE:View<SP>Info&&TXT:
+WAIT SECONDS=2
+TAG POS=1 TYPE=A ATTR=TXT:Contact<SP>Info
+WAIT SECONDS=2
+TAG POS=1 TYPE=TD ATTR=TXT:Main:<SP>* EXTRACT=TXT
+TAG POS=3 TYPE=A ATTR=TXT:*&&HREF:mailto:* EXTRACT=TXT
+SAVEAS TYPE=EXTRACT FOLDER=C:\Users\theki\Documents\iMacros\Downloads\ FILE=DCemail.csv
