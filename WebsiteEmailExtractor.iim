@@ -5,7 +5,7 @@ SET !ERRORIGNORE YES
 SET !ERRORCONTINUNE YES
 SET !EXTRACT_TEST_POPUP NO
 TAB T=1
-SET !DATASOURCE C:\Users\theki\Documents\iMacros\Downloads\links.csv
+SET !DATASOURCE C:\Users\UsernameGoesHere\Documents\iMacros\Downloads\links.csv
 SET !DATASOURCE_LINE {{!LOOP}}
 URL GOTO={{!COL1}}
 FRAME F=0
