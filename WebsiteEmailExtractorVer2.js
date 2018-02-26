@@ -5,11 +5,11 @@ macro +=  "TAB T=1" + "\n";
 macro +=  "SET !ERRORIGNORE YES" + "\n"; 
 macro +=  "SET !EXTRACT_TEST_POPUP NO" + "\n"; 
 macro +=  "SET !EXTRACT NULL" + "\n";
-macro +=  "URL GOTO=https://www.yello.ae/location/dubai/2" + "\n";
-macro +=  "TAG POS={{i}} TYPE=SPAN ATTR=TXT:Website" + "\n";
+macro +=  "URL GOTO=#WEBSITEHERE#" + "\n";
+/*macro +=  "TAG POS={{i}} TYPE=SPAN ATTR=TXT:Website" + "\n";
 macro +=  "WAIT SECONDS=2" + "\n";
 macro +=  "TAG POS=1 TYPE=DIV ATTR=CLASS:text<SP>weblinks EXTRACT=TXT" + "\n";
-macro +=  "TAB T=2" + "\n";
+macro +=  "TAB T=2" + "\n";*/
 macro +=  "URL GOTO={{!EXTRACT}}" + "\n";
 macro +=  "WAIT SECONDS=2" + "\n";
 macro +=  "TAG POS=1 TYPE=HTML ATTR=TXT:*" + "\n";
